@@ -2,6 +2,7 @@
 
 [![Deploy to Hostinger](https://www.hostinger.com/deploy-to-hostinger.svg)](https://hostinger.com/vps?app=https://github.com/mnkkal/Approval-Management)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![CI Test Suite](https://github.com/mnkkal/Approval-Management/actions/workflows/ci.yml/badge.svg)](https://github.com/mnkkal/Approval-Management/actions/workflows/ci.yml)
 [![Hostinger Open Source Partner](https://img.shields.io/badge/Hostinger-Open_Source_Partner-purple.svg)](https://hpanel.hostinger.com/open-source-partners)
 [![PHP 8.3](https://img.shields.io/badge/PHP-8.3-777BB4.svg)](https://www.php.net/)
 [![Docker Compose Ready](https://img.shields.io/badge/Docker-Compose_Ready-2496ED.svg)](https://www.docker.com/)

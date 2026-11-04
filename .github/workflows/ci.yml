@@ -1,0 +1,36 @@
+name: ApexApprove CI & Quality Assurance
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    name: Run Automated Test Suite
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Source Code
+      uses: actions/checkout@v4
+
+    - name: Setup PHP 8.3 Runtime
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.3'
+        extensions: mbstring, pdo, pdo_pgsql, pdo_sqlite, bcmath, gd, zip
+
+    - name: Check PHP Syntax (Linting)
+      run: |
+        find app -type f -name "*.php" -exec php -l {} \;
+        php -l public/index.php
+        php -l tests/run_tests.php
+
+    - name: Validate Docker Compose Configuration
+      run: |
+        docker compose config --quiet
+
+    - name: Execute Automated Verification Test Suite
+      run: |
+        php tests/run_tests.php
