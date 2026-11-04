@@ -27,6 +27,9 @@ jobs:
         php -l public/index.php
         php -l tests/run_tests.php
 
+    - name: Prepare Environment File
+      run: cp .env.example .env
+
     - name: Validate Docker Compose Configuration
       run: |
         docker compose config --quiet
